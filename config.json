@@ -96,7 +96,7 @@
     ],
     "fields": [
         {
-            "key": "position",
+            "key": "job_title",
             "name": "h1",
             "attribute": "text",
             "text": null,
