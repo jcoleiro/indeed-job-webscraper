@@ -73,9 +73,15 @@ Configure the following inputs using `config.json`:
 
     $ python scraper.py
 
+![Screen Shot 2021-11-09 at 9 50 30 am](https://user-images.githubusercontent.com/61095925/140830889-78eb6b8f-1c9c-4bb3-a513-76bc2d08971b.png)
+
 #### Output ####
 
 All filed out output to the folder `/output` in csv and json format.
+
+<img width="870" alt="Screen Shot 2021-11-09 at 8 46 16 am" src="https://user-images.githubusercontent.com/61095925/140830357-c3bc2a7a-3b00-4b33-ae6c-e977d6d2ea4a.png">
+
+![Screen Shot 2021-11-09 at 8 55 28 am](https://user-images.githubusercontent.com/61095925/140830410-b672c090-71c0-4d50-b4c7-86bc98e9bffb.png)
 
 Support
 --
