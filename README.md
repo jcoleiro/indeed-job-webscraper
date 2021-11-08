@@ -80,8 +80,15 @@ All filed out output to the folder `/output` in csv and json format.
 Support
 --
 
-Raise a github [issue](https://github.com/jcoleiro/indeed-job-webscraper/issues), or contact me at joshuacoleiro@gmail.com.
+[![GitHub Issues](https://img.shields.io/github/issues/harismuneer/Ultimate-Facebook-Scraper.svg?style=flat&label=Issues&maxAge=2592000)](https://github.com/jcoleiro/indeed-job-webscraper/issues)
+
+If you face any issue, you can create a new issue in the Issues Tab and I will be glad to help you out.
+
+Alternatively, you can contact me at joshuacoleiro@gmail.com.
 
 Licence
 --
-[![MIT](https://github.com/jcoleiro/indeed-job-webscraper/blob/master/LICENSE)](LICENSE)
+[![MIT](https://img.shields.io/cocoapods/l/AFNetworking.svg?style=style&label=License&maxAge=2592000)](LICENSE)
+
+Copyright (c) 2021-present, jcoleiro, Joshua Coleiro
+
