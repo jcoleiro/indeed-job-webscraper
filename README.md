@@ -81,3 +81,7 @@ Support
 --
 
 Raise a github [issue](https://github.com/jcoleiro/indeed-job-webscraper/issues), or contact me at joshuacoleiro@gmail.com.
+
+Licence
+--
+[![MIT](https://github.com/jcoleiro/indeed-job-webscraper/blob/master/LICENSE)](LICENSE)
