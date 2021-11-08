@@ -1,0 +1,246 @@
+{
+    "country": "United States",
+    "search": "Accountant",
+    "location": "San Francisco, CA",
+    "max_pages": 100,
+    "output_file_name": "data",
+    "params": [
+        {
+            "text": "Date Posted",
+            "key": "fromage",
+            "value": null,
+            "note": "Populate param value from options value below e.g. 1 (Optional)",
+            "options": [
+                {
+                    "text": "Last 24 hours",
+                    "value": "1"
+                },
+                {
+                    "text": "Last 3 days",
+                    "value": "3"
+                },
+                {
+                    "text": "Last 7 days",
+                    "value": "7"
+                },
+                {
+                    "text": "Last 14 days",
+                    "value": "14"
+                }
+            ]
+        },
+        {
+            "text": "Experience Level",
+            "key": "explvl",
+            "value": null,
+            "note": "Populate param value from options value below e.g. entry_level (Optional)",
+            "options": [
+                {
+                    "text": "Entry Level",
+                    "value": "entry_level"
+                },
+                {
+                    "text": "Mid Level",
+                    "value": "mid_level"
+                },
+                {
+                    "text": "Senior Level",
+                    "value": "senior_level"
+                }
+            ]
+        },
+        {
+            "text": "Location",
+            "key": "radius",
+            "value": null,
+            "note": "Populate param value from options value below e.g. 0 (Optional)",
+            "options": [
+                {
+                    "text": "Exact location only",
+                    "value": "0"
+                },
+                {
+                    "text": "within 5 miles",
+                    "value": "5"
+                },
+                {
+                    "text": "within 10 miles",
+                    "value": "10"
+                },
+                {
+                    "text": "within 15 miles",
+                    "value": "15"
+                },
+                {
+                    "text": "within 20 miles",
+                    "value": "20"
+                },
+                {
+                    "text": "within 25 miles",
+                    "value": "25"
+                },
+                {
+                    "text": "within 30 miles",
+                    "value": "30"
+                },
+                {
+                    "text": "within 50 miles",
+                    "value": "50"
+                },
+                {
+                    "text": "within 100 miles",
+                    "value": "100"
+                }
+            ]
+        }
+    ],
+    "fields": [
+        {
+            "key": "position",
+            "name": "h1",
+            "attribute": "text",
+            "text": null,
+            "attrs": {},
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "job_type",
+            "name": "div",
+            "attribute": "text",
+            "text": "Full\\-time|Part\\-time|Contract|Temporary|Internship",
+            "attrs": {},
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "company_name",
+            "name": "div",
+            "attribute": "text",
+            "text": null,
+            "attrs": {
+                "class": ["jobsearch-CompanyReview--heading", "icl-u-lg-mr--sm"]
+            },
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "location",
+            "name": "div",
+            "attribute": "text",
+            "text": "^[\\w\\s]+,\\s[A-Z]+\\s*\\d*$",
+            "attrs": {},
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "company_rating",
+            "name": "meta",
+            "attribute": "content",
+            "text": null,
+            "attrs": {
+                "itemprop": "ratingValue"
+            },
+            "type": "float",
+            "post_processing": []
+        },
+        {
+            "key": "company_reviews",
+            "name": "meta",
+            "attribute": "content",
+            "text": null,
+            "attrs": {
+                "itemprop": "ratingCount"
+            },
+            "type": "integer",
+            "post_processing": []
+        },
+        {
+            "key": "reviews_link",
+            "name": "a",
+            "attribute": "href",
+            "text": null,
+            "attrs": {
+                "class": "icl-Ratings-link"
+            },
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "salary_low",
+            "name": ["p", "span"],
+            "attribute": "text",
+            "text": ".*\\$\\d+\\,\\d+.*",
+            "attrs": {},
+            "type": "integer",
+            "post_processing": [
+                {
+                    "type": "regex_match",
+                    "value": "\\$\\d+\\,\\d+"
+                },
+                {
+                    "type": "regex_remove",
+                    "value": "\\$|\\,"
+                }
+            ]
+        },
+        {
+            "key": "salary_high",
+            "name": ["p", "span"],
+            "attribute": "text",
+            "text": ".*\\$\\d+\\,\\d+.*",
+            "attrs": {},
+            "type": "integer",
+            "post_processing": [
+                {
+                    "type": "regex_match",
+                    "value": "(\\$\\d+\\,\\d+)(?!.*\\$\\d+\\,\\d+)"
+                },
+                {
+                    "type": "regex_remove",
+                    "value": "\\$|\\,"
+                }
+            ]
+        },
+        {
+            "key": "experience",
+            "name": "div",
+            "attribute": "text",
+            "text": null,
+            "attrs": {
+                "class": "jobsearch-jobDescriptionText"
+            },
+            "type": "string",
+            "post_processing": [
+                {
+                    "type": "regex_match",
+                    "value": "\\w+\\+*\\s[y|Y]ears.*experience|\\w+\\s*\\-\\s*\\w+\\s[Y|y]ears.*experience"
+                },
+                {
+                    "type": "regex_match",
+                    "value": "\\(*\\w+\\)*\\+*\\s[y|Y]ears|\\w+\\s*\\-\\s*\\w+\\s[Y|y]ears"
+                }
+            ]
+        },
+        {
+            "key": "description",
+            "name": "div",
+            "attribute": "text",
+            "text": null,
+            "attrs": {
+                "class": "jobsearch-jobDescriptionText"
+            },
+            "type": "string",
+            "post_processing": []
+        },
+        {
+            "key": "job_posted",
+            "name": "div",
+            "attribute": "text",
+            "text": "^\\d+\\+* days* ago$|^Today$",
+            "attrs": {},
+            "type": "string",
+            "post_processing": []
+        }
+    ]
+}
