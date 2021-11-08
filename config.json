@@ -1,8 +1,8 @@
 {
     "country": "United States",
-    "search": "Accountant",
+    "search": "Software Developer",
     "location": "San Francisco, CA",
-    "max_pages": 100,
+    "max_pages": 1,
     "output_file_name": "data",
     "params": [
         {
@@ -153,17 +153,6 @@
                 "itemprop": "ratingCount"
             },
             "type": "integer",
-            "post_processing": []
-        },
-        {
-            "key": "reviews_link",
-            "name": "a",
-            "attribute": "href",
-            "text": null,
-            "attrs": {
-                "class": "icl-Ratings-link"
-            },
-            "type": "string",
             "post_processing": []
         },
         {

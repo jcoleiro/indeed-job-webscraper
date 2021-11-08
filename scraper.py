@@ -119,14 +119,16 @@ def main():
             break
     print(f'Total jobs scraped: {len(data)}')
 
-    with open(f'{config["output_file_name"]}.csv', 'w') as csv_file:
+    with open(f'output/{config["output_file_name"]}.csv', 'w') as csv_file:
         fieldnames: List[str] = list(data[0].keys() if data else [])
         dict_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         dict_writer.writeheader()
         dict_writer.writerows(data)
+        print(f'Saved output/{config["output_file_name"]}.csv')
 
-    with open(f'{config["output_file_name"]}.json', 'w') as json_file:
+    with open(f'output/{config["output_file_name"]}.json', 'w') as json_file:
         json.dump(data, json_file)
+        print(f'Saved output/{config["output_file_name"]}.json')
 
 if __name__ == "__main__":
     main()
